@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jpackage" name="ProductCalculatorServlet">
+    <output-path>$PROJECT_DIR$/out/artifacts/ProductCalculatorServlet</output-path>
+    <root id="root">
+      <element id="archive" name="ProductCalculatorServlet.jar">
+        <element id="module-output" name="ProductCalculatorServlet" />
+      </element>
+    </root>
+  </artifact>
+</component>

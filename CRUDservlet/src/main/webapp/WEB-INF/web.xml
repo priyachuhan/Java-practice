@@ -1,0 +1,37 @@
+<web-app>
+  <servlet>
+    <servlet-name>Add</servlet-name>
+    <servlet-class>com.example.servlet.AddStudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Add</servlet-name>
+    <url-pattern>/AddStudentServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>View</servlet-name>
+    <servlet-class>com.example.servlet.ViewStudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>View</servlet-name>
+    <url-pattern>/ViewStudentServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Update</servlet-name>
+    <servlet-class>com.example.servlet.UpdateStudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Update</servlet-name>
+    <url-pattern>/UpdateStudentServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Delete</servlet-name>
+    <servlet-class>com.example.servlet.DeleteStudentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Delete</servlet-name>
+    <url-pattern>/DeleteStudentServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

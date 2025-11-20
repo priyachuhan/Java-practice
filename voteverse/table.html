@@ -1,0 +1,57 @@
+<h3>4.2.1 Test Cases for Unit Testing (Voteverse)</h3>
+<table border="1" cellspacing="0" cellpadding="8">
+  <tr>
+    <th>Test Case ID</th>
+    <th>Module</th>
+    <th>Test Description</th>
+    <th>Input</th>
+    <th>Expected Output</th>
+    <th>Actual Output</th>
+    <th>Status</th>
+  </tr>
+  <tr>
+    <td>UT-VV-01</td>
+    <td>User Registration</td>
+    <td>Validate all input fields</td>
+    <td>Full Name, Email, Fingerprint ID</td>
+    <td>Registration Successful</td>
+    <td>Registration Successful</td>
+    <td>✅ Pass</td>
+  </tr>
+  <tr>
+    <td>UT-VV-02</td>
+    <td>User Registration</td>
+    <td>Missing Email</td>
+    <td>Full Name, "", Fingerprint ID</td>
+    <td>Email is required</td>
+    <td>Email is required</td>
+    <td>✅ Pass</td>
+  </tr>
+  <tr>
+    <td>UT-VV-03</td>
+    <td>Vote Casting</td>
+    <td>Submit vote</td>
+    <td>Candidate Selected</td>
+    <td>Vote Cast Successfully</td>
+    <td>Vote Cast Successfully</td>
+    <td>✅ Pass</td>
+  </tr>
+  <tr>
+    <td>UT-VV-04</td>
+    <td>Admin Login</td>
+    <td>Correct Credentials</td>
+    <td>admin@voteverse.com / admin123</td>
+    <td>Redirect to Admin Dashboard</td>
+    <td>Redirected to Dashboard</td>
+    <td>✅ Pass</td>
+  </tr>
+  <tr>
+    <td>UT-VV-05</td>
+    <td>Admin Panel</td>
+    <td>Count votes per candidate</td>
+    <td>Candidate ID = 02</td>
+    <td>Vote Count Displayed</td>
+    <td>Vote Count = 120</td>
+    <td>✅ Pass</td>
+  </tr>
+</table>

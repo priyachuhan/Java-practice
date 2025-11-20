@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vote - Voteverse</title>
+  <style>
+    :root {
+      --bg: light blue;
+      --box: #334155; /* light blue-ish */
+      --accent: #22c55e; /* green button */
+      --text: #ffffff;
+      --muted: #94a3b8;
+      --header: #1e293b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background-color: var(--header);
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 15px #3b82f6;
+    }
+
+    header h1 {
+      font-size: 24px;
+      color: #3b82f6;
+    }
+
+    .logout {
+      background: #ef4444;
+      padding: 8px 16px;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+   .welcome-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: var(--box);
+  padding: 15px 25px;
+  border-radius: 10px;
+  color: #22c55e;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+  font-size: 15px;
+  z-index: 99;
+  animation: fadeOut 0.5s ease-out 3s forwards;
+  opacity: 1;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+  }
+}
+
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .container h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+      color: #3b82f6;
+      text-align: center;
+    }
+
+    .card {
+      background-color: var(--box);
+      padding: 25px;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.01);
+    }
+
+    .info {
+      text-align: left;
+    }
+
+    .info h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .info p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .cast-btn {
+      padding: 10px 20px;
+      background-color: var(--accent);
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .cast-btn:disabled {
+      background-color: #64748b;
+      cursor: wait;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Voteverse</h1>
+  <button class="logout" onclick="window.location.href='register.html'">Logout</button>
+</header>
+
+<div class="welcome-popup" id="welcomePopup">
+  Login successful! Welcome ID: <span id="userID">Loading...</span>
+</div>
+
+<div class="container">
+  <h2>Select Your Candidate</h2>
+
+  <!-- Candidate List -->
+  <div class="card">
+    <div class="info">
+      <h3>Jane Sharma</h3>
+      <p>Democratic Front</p>
+    </div>
+    <button class="cast-btn" onclick="castVote(this, 1)">Cast Vote</button>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <h3>Bishal Karki</h3>
+      <p>People's Alliance</p>
+    </div>
+    <button class="cast-btn" onclick="castVote(this, 2)">Cast Vote</button>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <h3>Ritika Adhikari</h3>
+      <p>Green Movement</p>
+    </div>
+    <button class="cast-btn" onclick="castVote(this, 3)">Cast Vote</button>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <h3>Sanjay Rai</h3>
+      <p>Progressive Union</p>
+    </div>
+    <button class="cast-btn" onclick="castVote(this, 4)">Cast Vote</button>
+  </div>
+
+  <div class="card">
+    <div class="info">
+      <h3>Anita Lama</h3>
+      <p>People’s Reform Party</p>
+    </div>
+    <button class="cast-btn" onclick="castVote(this, 5)">Cast Vote</button>
+  </div>
+
+</div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("fingerprint_id") || "Unknown";
+  document.getElementById("userID").textContent = id;
+
+  // Disappear popup after 4 seconds (optional backup)
+  setTimeout(() => {
+    const popup = document.getElementById("welcomePopup");
+    if (popup) popup.style.display = "none";
+  }, 4000);
+
+  function castVote(button, candidateId) {
+    button. Disabled = true;
+    button.textContent = "Processing...";
+
+    const candidateMap = {
+      1: "Jane Sharma",
+      2: "Bishal Karki",
+      3: "Ritika Adhikari",
+      4: "Sanjay Rai",
+      5: "Anita Lama"
+    };
+
+    const candidateName = candidateMap[candidateId];
+    const id = new URLSearchParams(window.location.search).get("fingerprint_id");
+
+    // Send vote to PHP
+    fetch('submit_vote.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `fingerprint_id=${encodeURIComponent(id)}&candidate=${encodeURIComponent(candidateName)}`
+    })
+    .then(res => res.text())
+    .then(data => {
+      if (data.trim() === "success") {
+        window.location.href = `receipt.php?fingerprint_id=${encodeURIComponent(id)}&candidate=${encodeURIComponent(candidateName)}`;
+      } else if (data.trim() === "already_voted") {
+        window.location.href = "already_voted.html?fingerprint_id=" + encodeURIComponent(id);
+      } else {
+        alert(data);
+        button.disabled = false;
+        button.textContent = "Cast Vote";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

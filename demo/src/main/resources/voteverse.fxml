@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Voteverse"
+            prefHeight="400.0" prefWidth="600.0">
+
+</AnchorPane>
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<center>
+    <VBox alignment="CENTER" spacing="20">
+        <!-- Title -->
+        <Label text="Welcome to VoteVerse" styleClass="title-label"/>
+
+        <!-- Feature Boxes -->
+        <HBox spacing="30" alignment="CENTER">
+            <VBox alignment="CENTER" spacing="10" styleClass="feature-box">
+                <ImageView fitWidth="50" fitHeight="50">
+                    <Image url="@assets/fingerprint-icon.png"/>
+                </ImageView>
+                <Label text="Secure & Verified" styleClass="feature-title"/>
+            </VBox>
+            <!-- Repeat for other features -->
+        </HBox>
+
+        <!-- CTA Button -->
+        <Button text="Ready to Vote?" onAction="#startVoting" styleClass="cta-button"/>
+    </VBox>
+</center>
+
+<!-- Footer -->
+<bottom>
+    <HBox alignment="CENTER" styleClass="footer">
+        <Label text="Get with a Loyalty"/>
+    </HBox>
+</bottom>
+</BorderPane>

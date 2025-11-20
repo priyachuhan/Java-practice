@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Already Registered - Voteverse</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --box: #1e293b;
+      --accent: #f97316;
+      --text: #f8fafc;
+      --soft: #94a3b8;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: var(--box);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+      text-align: center;
+      max-width: 450px;
+    }
+
+    .icon {
+      font-size: 60px;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      color: var(--accent);
+    }
+
+    p {
+      color: var(--soft);
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #ea580c;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="icon">🚫</div>
+  <h2>Already Registered</h2>
+  <p>The fingerprint ID or email you entered is already in use.<br>Please use a different one.</p>
+  <button class="btn" onclick="window.location.href='register.html'">Go Back</button>
+</div>
+
+</body>
+</html>

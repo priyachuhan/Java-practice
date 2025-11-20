@@ -1,0 +1,12 @@
+0:0:0:0:0:0:0:1 - - [27/Jun/2025:13:16:50 +0545] "GET /GenericServlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [27/Jun/2025:13:16:51 +0545] "GET /GenericServlet/ HTTP/1.1" 200 190
+0:0:0:0:0:0:0:1 - - [27/Jun/2025:13:16:56 +0545] "GET /GenericServlet/hello HTTP/1.1" 404 776
+0:0:0:0:0:0:0:1 - - [27/Jun/2025:13:18:18 +0545] "GET /GenericServlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [27/Jun/2025:13:18:19 +0545] "GET /GenericServlet/ HTTP/1.1" 200 190
+0:0:0:0:0:0:0:1 - - [27/Jun/2025:13:18:21 +0545] "GET /GenericServlet/hello HTTP/1.1" 404 776
+0:0:0:0:0:0:0:1 - - [27/Jun/2025:13:18:59 +0545] "GET /GenericServlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [27/Jun/2025:13:18:59 +0545] "GET /GenericServlet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [27/Jun/2025:13:19:00 +0545] "GET /GenericServlet/ HTTP/1.1" 200 190
+0:0:0:0:0:0:0:1 - - [27/Jun/2025:13:19:00 +0545] "GET /GenericServlet/ HTTP/1.1" 200 190
+0:0:0:0:0:0:0:1 - - [27/Jun/2025:13:19:02 +0545] "GET /GenericServlet/hello HTTP/1.1" 404 776
+0:0:0:0:0:0:0:1 - - [27/Jun/2025:13:19:05 +0545] "GET /GenericServlet/hello HTTP/1.1" 404 776
